@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Api.Entities.Tool">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAIAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Tool.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Model" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="TestPoints" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Demo.Api.Entities.ToolManufacturer">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ToolManufacturer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ToolModels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Demo.Api.Entities.ToolModel">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ToolModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ToolType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Api.Entities.TestPoint">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQ=</HashCode>
+      <FileName>TestPoint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tool" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="Demo.Api.Entities.ToolTechnology">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAIAAAACAAACAAAAAAAA=</HashCode>
+      <FileName>ToolTechnology.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

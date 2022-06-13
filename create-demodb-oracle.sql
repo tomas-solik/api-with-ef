@@ -1,0 +1,10 @@
+CREATE TABLESPACE demotablespace DATAFILE 'demotablespace.dpf' SIZE 1m AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED;
+CREATE USER demo IDENTIFIED BY demopwd DEFAULT TABLESPACE demotablespace;  
+GRANT CREATE SESSION TO demo;
+GRANT create table TO demo;
+GRANT create view TO demo;
+GRANT create any trigger TO demo;
+GRANT create any procedure TO demo;
+GRANT create sequence TO demo;
+GRANT create synonym TO demo;
+ALTER USER demo QUOTA UNLIMITED ON demotablespace;
