@@ -1,4 +1,5 @@
 ﻿using Demo.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Demo.Dal.DemoDbContext
 {
