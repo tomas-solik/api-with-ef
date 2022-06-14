@@ -1,4 +1,4 @@
-﻿namespace Demo.Api.Entities
+﻿namespace Demo.Entities
 {
     public enum ToolTechnology
     {

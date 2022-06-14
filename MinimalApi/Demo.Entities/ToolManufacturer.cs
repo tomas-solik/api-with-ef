@@ -1,14 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Demo.Api.Entities
+namespace Demo.Entities
 {
     public class ToolManufacturer
     {
-        //[DatabaseGenerat‌ed(DatabaseGeneratedOption.None)]
         public virtual long Id { get; set; }
 
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        List<ToolModel> ToolModels { get; set; }
+        public virtual List<ToolModel> ToolModels { get; set; }
     }
 }

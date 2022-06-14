@@ -1,18 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Demo.Api.Entities
+namespace Demo.Entities
 {
-
     public class ToolModel
     {
-        //[DatabaseGenerat‌ed(DatabaseGeneratedOption.None)]
         public virtual long Id { get; set; }
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public string Description { get; set; }
+        public virtual string Description { get; set; }
 
-        ToolTechnology ToolType { get; set; }
+        public virtual ToolTechnology ToolType { get; set; }
 
-        ToolManufacturer Manufacturer { get; set; }
+        public virtual ToolManufacturer Manufacturer { get; set; }
+
+        public virtual List<Tool> Tools { get; set; }
     }
 }

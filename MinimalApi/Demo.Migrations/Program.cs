@@ -3,7 +3,7 @@ using Demo.Dal.Interface;
 using Demo.Dal.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace Demo.Api
+namespace Demo.Migrations
 {
     public class Program
     {
@@ -31,12 +31,12 @@ namespace Demo.Api
                 {
                     case "oracle":
                         {
-                            opt.UseOracle(builder.Configuration.GetConnectionString("OracleDemoDbContext"));
+                            opt.UseOracle(builder.Configuration.GetConnectionString("OracleDemoDbContext"), x => x.MigrationsAssembly("Demo.Dal.OracleMigrations"));
                             break;
                         }
                     case "mssql":
                         {
-                            opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQLDemoDbContext"));
+                            opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQLDemoDbContext"), x => x.MigrationsAssembly("Demo.Dal.MssqlMigrations"));
                             break;
                         }
                     default:
@@ -48,7 +48,7 @@ namespace Demo.Api
 
             builder.Services.AddScoped<IToolService, ToolService>();
             var app = builder.Build();
-            
+
             #region Configure swagger
 
             // Configure the HTTP request pipeline.
@@ -65,15 +65,7 @@ namespace Demo.Api
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<DemoDbContext>();
 
-                DbInitializer.Initialize(context);
-
-                #region Capture SQL script if needed
-
-                //To get the SQL used by EnsureCreated, you can use the GenerateCreateScript method.
-                var sql = context.Database.GenerateCreateScript();
-                File.WriteAllText($"create_{builder.Configuration["DbProvider"]}.sql", sql);
-
-                #endregion
+                DbInitializer.SeedData(context);
             }
 
             #region Middlewares configuration
